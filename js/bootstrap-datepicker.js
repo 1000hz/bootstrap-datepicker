@@ -387,8 +387,7 @@
 			var date = altdate || this.dates.get(-1),
 				local_date = this._utc_to_local(date);
 
-			this.element.trigger({
-				type: event,
+			this.element.trigger(event + ".bsDatepicker", {
 				date: local_date,
 				dates: $.map(this.dates, this._utc_to_local),
 				format: $.proxy(function(ix, format){
